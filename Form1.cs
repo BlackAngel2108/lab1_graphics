@@ -44,7 +44,8 @@ namespace lab1_graphics
 
         private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Filters filter = new GrayScaleFilter();
+            backgroundWorker2.RunWorkerAsync(filter);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
@@ -84,6 +85,30 @@ namespace lab1_graphics
                 pictureBox2.Refresh();
             }
             progressBar2.Value = 0;
+        }
+
+        private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SepiaFilter();
+            backgroundWorker2.RunWorkerAsync(filter);
+        }
+
+        private void идеальныйОтражательToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new PerfectReflectorFilter();
+            backgroundWorker2.RunWorkerAsync(filter);
+        }
+
+        private void линейноеРастяжениеГистрограммыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new LinearStretchingFilter();
+            backgroundWorker2.RunWorkerAsync(filter);
+            
+        }
+        private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new SharpenFilter();
+            backgroundWorker2.RunWorkerAsync(filter);
         }
     }
 }
